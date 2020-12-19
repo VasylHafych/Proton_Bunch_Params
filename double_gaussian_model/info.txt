@@ -1,0 +1,45 @@
+	Double Gaussian proton bunch model 
+
+Files description:  
+
+	* data_all.csv : A Data Frame table exported to CSV file with proton bunch parameters for 600 events. 
+
+	* data_small_p.csv : A Data Frame table exported to CSV file with average parameters for a dataset with a small bunch population. Parameters represent "mean event" with average bunch population, size, waist, etc. 
+
+	* data_large_p.csv : A Data Frame table exported to CSV file with average parameters for a dataset with a large bunch population. Parameters represent "mean event" with average bunch population, size, waist, etc. 
+
+
+	***
+
+Parameters description: 
+
+	Each row of the table represents one event. Each model parameter is represented by two columns, one for the mean value and one for the standard deviation. Parameter names are the same for all files. 
+	
+
+	* ev_index : Index of the event. 
+
+	* ev_charge : Bunch population of the event (e10 p+). 
+	
+	* trsz_x_halo / trsz_y_halo : Transversal size of the halo component at the waist position along x/y dimension (mm).
+
+	* trsz_x_core / trsz_y_core : Transversal size of the core component in the waist position along x/y dimension (mm).
+
+	* angspr_x_halo / angspr_y_halo : Angular spread of the halo component along x/y dimension (rad*e-5).
+
+	* angspr_x_core / angspr_y_core : Angular spread of the core component along x/y dimension (rad*e-5).
+
+	* waist_halo / waist_core : Waist position of the halo/core component (m). Counted from the position of the first camera (BTV50).
+
+	* emitt_x_halo / emitt_y_halo : Emittance of the halo component along x/y dimension (mm*mrad). Note: Emittance is not sampled directly in MCMC and it is computed as 
+		emitt_x_halo = trsz_x_halo * angspr_x_halo * 426.0 * 10^3
+
+	* emitt_x_core / emitt_y_core : Emittance of the core component along x/y dimension (mm*mrad). Emittance is not sampled directly in MCMC and it is computed as 
+		emitt_x_core = trsz_x_core * angspr_x_core * 426.0 * 10^3
+
+	* μmixt_pow : A parameter that defines importance of the halo/core component:  
+		I_total = μmixt_pow*I_halo + (1-μmixt_pow)*I_core.
+
+	* align_x / align_y : Positions of the bunch centroid on the screens (microns). Alignment of cameras is not applied. 
+
+	* mode : "LP" => dataset with large bunch population, "SP" => dataset with small bunch population. 
+

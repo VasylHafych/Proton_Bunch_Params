@@ -1,0 +1,37 @@
+	Single Gaussian proton bunch model 
+
+Important note: This model does not describe measured data accurately (especially for events with a small bunch population), for better accuracy use the double Gaussian model. 
+
+Files description:  
+
+	* data_all.csv : A Data Frame table exported to CSV file with proton bunch parameters for ~240 events. 
+
+	* data_small_p.csv : A Data Frame table exported to CSV file with average parameters for a dataset with a small bunch population. Parameters represent "mean event" with average bunch population, size, waist, etc. 
+
+	* data_large_p.csv : A Data Frame table exported to CSV file with average parameters for a dataset with a large bunch population. Parameters represent "mean event" with average bunch population, size, waist, etc. 
+
+
+	***
+
+Parameters description: 
+
+Each row of the table represents one event. Each model parameter is represented by two columns, one for the mean value and one for the standard deviation. Parameter names are the same for all files. 
+	
+
+	* ev_index : Index of the event. 
+
+	* ev_charge : Bunch population of the event (e10 p+). 
+	
+	* trsz_x / trsz_y : Transversal size at the waist position along x/y dimension (mm).
+
+	* angspr_x / angspr_y : Angular spread along x/y dimension (rad*e-5).
+
+	* waist : Waist position (m). Counted from the position of the first camera (BTV50).
+
+	* emitt_x / emitt_y : Emittance along x/y dimension (mm*mrad). Note: Emittance is not sampled directly in MCMC and it is computed as 
+		emitt_x = trsz_x * angspr_x * 426.0 * 10^3
+
+	* align_x / align_y : Positions of the bunch centroid on the screens (microns). Alignment of cameras is not applied. 
+
+	* mode : "LP" => dataset with large bunch population, "SP" => dataset with small bunch population. 
+
