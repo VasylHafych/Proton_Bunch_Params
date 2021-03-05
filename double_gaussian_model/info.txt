@@ -43,3 +43,5 @@ Parameters description:
 
 	* mode : "LP" => dataset with large bunch population, "SP" => dataset with small bunch population. 
 
+	* cam4_res_x / cam4_res_y : Resolution function of the last camera 
+

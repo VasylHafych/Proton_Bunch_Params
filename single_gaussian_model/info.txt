@@ -35,3 +35,4 @@ Each row of the table represents one event. Each model parameter is represented 
 
 	* mode : "LP" => dataset with large bunch population, "SP" => dataset with small bunch population. 
 
+	* cam4_res_x / cam4_res_y : Resolution function of the last camera 
